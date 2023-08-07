@@ -1,0 +1,24 @@
+
+`
+java:S1192K"JDefine a constant instead of duplicating this literal "sessions/" 4 times.(Çà¡ú
+>
+java:S1604g"(Make this anonymous inner class a lambda(ÉãÃ®
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óì¯Ú
+€
+java:S4165˜"dRemove this useless assignment; "result" already holds the assigned value along all execution paths.(Ã‘­ªÿÿÿÿÿ
+<	java:S1314""Add a default case to this switch.(†´°şúÿÿÿÿ
+7	java:S1319""Add a default case to this switch.(–î´›
+g
+java:S3776f"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(õü—|
+Z
+java:S1117n"?Rename "byteCounter" which hides the field declared at line 19.(úŞÒıúÿÿÿÿ
+K
+java:S1481n"0Remove this unused "byteCounter" local variable.(úŞÒıúÿÿÿÿ
+B
+java:S1481Š"&Remove this unused "a" local variable.(–ÎåÌûÿÿÿÿ
+M
+java:S1854“"7Remove this useless assignment to local variable "buf".(¯˜³/
+>
+java:S1481“"(Remove this unused "buf" local variable.(¯˜³/
+a
+java:S1858§"J"msgJson" is already a string, there's no need to call "toString()" on it.(ĞÜ¥
