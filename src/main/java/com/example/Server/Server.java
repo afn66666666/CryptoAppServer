@@ -18,6 +18,7 @@ public class Server {
     private static BufferedReader in; // поток чтения из сокета
     private static BufferedWriter out; // поток записи в сокет
     public static Map<Integer,Session> sessions;
+    // session key, encryption key
     public static Map<Integer,String> keys;
     public static Map<Integer,byte[]> ivs;
 
@@ -35,7 +36,7 @@ public class Server {
                     in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                     var isCurSocketHost = readMessage();
                     System.out.println(isCurSocketHost);
-                    if (isCurSocketHost.equals("1")) {
+                    if (isCurSocketHost.equals(String.valueOf(Definitions.CREATE_SESSION_MACROS))) {
                         // creating session
                         var encryptionMode = readMessage();
                         if(encryptionMode.equals("MARS(CBC)")){
@@ -73,8 +74,6 @@ public class Server {
 
                         }
                     }
-//                System.out.println(clientSocket.getPort() + " added");
-//                MainViewController.log(clientSocket.getPort() + " added");
                 }
             }
             finally {

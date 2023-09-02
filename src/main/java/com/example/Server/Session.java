@@ -12,6 +12,7 @@ public class Session {
     private Socket socket;
     public int host;
     public String encryptionMethod;
+    private Settings settings;
 
     public int id;
 
@@ -31,9 +32,6 @@ public class Session {
         }
     }
 
-    private void readingSockets() {
-
-    }
 
     public void addClient(Socket addedSocket){
         try {

@@ -19,8 +19,7 @@ public class MainViewController implements Initializable {
     public static void log(String msg){
         if(stLogArea == null) {
             System.out.println("cant log. logger is null!");
-            stLogArea.appendText(msg);
-            stLogArea.appendText("\n");
+            stLogArea.appendText(msg + "\n");
         }
     }
 

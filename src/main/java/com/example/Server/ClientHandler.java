@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Base64;
 
 public class ClientHandler extends Thread {
-    public static final int FILE_BUF_SIZE = 1024;
+    public static final int FILE_BUF_SIZE = 1048576;
     private Socket socket;
     private BufferedReader in; // поток чтения из сокета
     private BufferedWriter out; // поток записи в сокет
@@ -93,7 +93,7 @@ public class ClientHandler extends Thread {
                         sendFile(file);
                     }
             }
-        } catch (/*IOException*/Exception e) {
+        } catch (Exception e) {
             MainViewController.log("read message error : " + e.getMessage());
         }
         return result;
@@ -107,7 +107,6 @@ public class ClientHandler extends Thread {
                     var bytes = Files.readAllBytes(file.toPath());
                     var size = bytes.length;
                     int percent = size / 100;
-                    int byteCounter = 0;
                     int percentage = 0;
                     for (int i = 0; i < size; i += FILE_BUF_SIZE) {
                         byte[] buf;
