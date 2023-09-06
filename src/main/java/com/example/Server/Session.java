@@ -12,7 +12,10 @@ public class Session {
     private Socket socket;
     public int host;
     public String encryptionMethod;
-    private Settings settings;
+    private String encryptedHostKey;
+    private String encryptedUserKey;
+    private String publicHostKey;
+    private String userHostKey;
 
     public int id;
 
@@ -50,4 +53,39 @@ public class Session {
         }
     }
 
+    public boolean isFull() {
+        return clientListeners.size() == 2;
+    }
+
+    public String getEncryptedHostKey() {
+        return encryptedHostKey;
+    }
+
+    public void setEncryptedHostKey(String encryptedHostKey) {
+        this.encryptedHostKey = encryptedHostKey;
+    }
+
+    public String getEncryptedUserKey() {
+        return encryptedUserKey;
+    }
+
+    public void setEncryptedUserKey(String encryptedUserKey) {
+        this.encryptedUserKey = encryptedUserKey;
+    }
+
+    public String getPublicHostKey() {
+        return publicHostKey;
+    }
+
+    public void setPublicHostKey(String publicHostKey) {
+        this.publicHostKey = publicHostKey;
+    }
+
+    public String getUserHostKey() {
+        return userHostKey;
+    }
+
+    public void setUserHostKey(String userHostKey) {
+        this.userHostKey = userHostKey;
+    }
 }

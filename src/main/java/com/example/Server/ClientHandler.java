@@ -18,6 +18,8 @@ public class ClientHandler extends Thread {
     private byte[] fileBuf;
     private int byteCounter;
 
+    private String publicKey;
+
     public ClientHandler(Socket socket, int id) throws IOException {
         this.socket = socket;
         byteCounter = 0;
@@ -81,7 +83,7 @@ public class ClientHandler extends Thread {
                     }
                     break;
                 case "text":
-                    file = new File("sessions/" + sessionId, generateUniqueFileName(Integer.toString(socket.getPort())) + ".txt");
+                    file = new File("sessions/" + sessionId + "/" + socket, generateUniqueFileName(Integer.toString(socket.getPort())) + ".txt");
                     try (var writer = new FileOutputStream(file)) {
                         writer.write(msg.data);
                     }
@@ -92,6 +94,9 @@ public class ClientHandler extends Thread {
                     if (file.exists()) {
                         sendFile(file);
                     }
+                case "encryptedKey":
+                    Server.setEncryptedHostKey(msg.data);
+
             }
         } catch (Exception e) {
             MainViewController.log("read message error : " + e.getMessage());

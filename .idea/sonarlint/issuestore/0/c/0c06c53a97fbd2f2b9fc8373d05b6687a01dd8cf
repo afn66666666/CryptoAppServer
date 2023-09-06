@@ -1,0 +1,29 @@
+
+w
+java:S1104"aMake CREATE_SESSION_MACROS a static final constant or non-public and provide accessors if needed.(ï­’¢
+s
+java:S1104"XMake KEY_LENGTH_1 a static final constant or non-public and provide accessors if needed.(Úù—…ÿÿÿÿÿ
+m
+java:S1104"XMake KEY_LENGTH_2 a static final constant or non-public and provide accessors if needed.(¥ÐüR
+n
+java:S1104"XMake KEY_LENGTH_3 a static final constant or non-public and provide accessors if needed.(Ù«´¸
+Q
+java:S1444";Make this "public static CREATE_SESSION_MACROS" field final(ï­’¢
+M
+java:S1444"2Make this "public static KEY_LENGTH_1" field final(Úù—…ÿÿÿÿÿ
+G
+java:S1444"2Make this "public static KEY_LENGTH_2" field final(¥ÐüR
+H
+java:S1444"2Make this "public static KEY_LENGTH_3" field final(Ù«´¸
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óì¯Ú
+v
+java:S3008"`Rename this field "CREATE_SESSION_MACROS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï­’¢
+r
+java:S3008"WRename this field "KEY_LENGTH_1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úù—…ÿÿÿÿÿ
+l
+java:S3008"WRename this field "KEY_LENGTH_2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ÐüR
+m
+java:S3008"WRename this field "KEY_LENGTH_3" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù«´¸
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.( …À±
+s	java:S131"YComplete cases by adding the missing enum constants or add a default case to this switch.(©Øûºûÿÿÿÿ
+<	java:S131""Add a default case to this switch.(Ýõô£ùÿÿÿÿ
