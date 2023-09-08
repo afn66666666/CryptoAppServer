@@ -1,0 +1,30 @@
+
+D
+java:S3740"/Provide the parametrized type for this generic.(æÕİ
+r
+java:S1104"WMake idGenerator a static final constant or non-public and provide accessors if needed.(ˆïïÚøÿÿÿÿ
+k
+java:S1104"PMake host a static final constant or non-public and provide accessors if needed.(€¾†‹ıÿÿÿÿ
+r
+java:S1104"\Make encryptionMethod a static final constant or non-public and provide accessors if needed.(àéê¥
+i
+java:S1104"NMake id a static final constant or non-public and provide accessors if needed.(ÍéÌ‘øÿÿÿÿ
+q
+java:S1104"[Make clientListeners a static final constant or non-public and provide accessors if needed.(µÓÊÀ
+L
+java:S1444"1Make this "public static idGenerator" field final(ˆïïÚøÿÿÿÿ
+K
+java:S1444"5Make this "public static clientListeners" field final(µÓÊÀ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óì¯Ú
+A
+java:S3010",Remove this assignment of "clientListeners".(æÕİ
+?
+java:S2386"*Make member "clientListeners" "protected".(æÕİ
+C
+java:S1481""(Remove this unused "res" local variable.(óü¡ùıÿÿÿÿ
+`
+java:S11241"EReorder the modifiers to comply with the Java Language Specification.(“ëùÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
