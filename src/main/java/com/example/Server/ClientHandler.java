@@ -83,7 +83,7 @@ public class ClientHandler extends Thread {
                     }
                     break;
                 case "text":
-                    file = new File("sessions/" + sessionId + "/" + socket, generateUniqueFileName(Integer.toString(socket.getPort())) + ".txt");
+                    file = new File("sessions/" + sessionId, generateUniqueFileName(Integer.toString(socket.getPort())) + ".txt");
                     try (var writer = new FileOutputStream(file)) {
                         writer.write(msg.data);
                     }

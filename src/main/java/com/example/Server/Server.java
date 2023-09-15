@@ -25,7 +25,6 @@ public class Server {
 
     private static BigInteger[] hostPublicKey;
     private static BigInteger[] userPublicKey;
-    private static byte[] encryptedHostKey;
     private static byte[] userEncryptedKey;
 
     public static void launch() {
@@ -143,7 +142,6 @@ public class Server {
     private static void publicKeysExchange(BufferedWriter hostOut, BufferedWriter userOut,
                                            BufferedReader hostIn, BufferedReader userIn) throws IOException {
 
-        userPublicKey = readPublicKey();
         writePublicKey(hostPublicKey);
 
         var data = in.readLine();
@@ -153,19 +151,19 @@ public class Server {
 
         out = hostOut;
         in = hostIn;
-        writePublicKey(userPublicKey);
         writeSystemMessage(encryptedUserKey);
         out = userOut;
 
     }
 
     private static void endExchange() {
-        writeSystemMessage(encryptedHostKey);
+
+//        writeSystemMessage(encryptedHostKey);
     }
 
     public static void setEncryptedHostKey(byte[] encryptedHostKey) {
-        Server.encryptedHostKey = encryptedHostKey;
-        endExchange();
+//        Server.encryptedHostKey = encryptedHostKey;
+//        endExchange();
     }
 
     private static BigInteger[] readPublicKey() {
@@ -192,32 +190,5 @@ public class Server {
         }
     }
 
-    public static void suffer() {
-//        String testMessage = "hello";
-//        var xtr = new XTR(Entities.TestMode.Ferma, 45);
-//        var p = readPublicKey();
-//        var q = readPublicKey();
-//        var traceA = readPublicKey();
-//        var traceB = readPublicKey();
-//        var traceGKA = readPublicKey();
-//        var traceGKB = readPublicKey();
-//        var b = readPublicKey();
-//        var receivedPKey = new XTR.PublicKey(p, q, new GFP2(p, traceA, traceB), new GFP2(p, traceGKA, traceGKB));
-//        var eData = xtr.encrypt(testMessage.getBytes(), receivedPKey, b);
-//        var sData = new String(eData);
-//        System.out.println("send " + sData);
-//
-//        var b64 = Base64.getEncoder().encode(eData);
-//        var msg = new Message("", "system", "ready", 0, b64);
-//        var msgString = new Gson().toJson(msg);
-//        try {
-//
-//            out.write(msgString + "\n");
-//            out.flush();// отправляем сообщение на сервер
-//
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-    }
 }
 
