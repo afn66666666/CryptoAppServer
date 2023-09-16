@@ -24,8 +24,6 @@ public class Server {
     public static Map<Integer, byte[]> ivs;
 
     private static BigInteger[] hostPublicKey;
-    private static BigInteger[] userPublicKey;
-    private static byte[] userEncryptedKey;
 
     public static void launch() {
         try {
@@ -35,7 +33,6 @@ public class Server {
                 ivs = new HashMap<>();
                 ServerSocket server = new ServerSocket(4004);
                 MainViewController.log("launched");
-
                 while (true) {
                     clientSocket = server.accept();
                     out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
@@ -44,19 +41,17 @@ public class Server {
                     if (isCurSocketHost.equals(String.valueOf(Definitions.CREATE_SESSION_MACROS))) {
                         // creating session
                         var encryptionMode = readMessage();
+                        var keyLength = Integer.valueOf(readMessage());
                         if (encryptionMode.equals("MARS(CBC)")) {
                             var iv = readMessage();
                             var decrypted = Base64.getDecoder().decode((iv));
                             ivs.put(Session.idGenerator, decrypted);
                         }
-//                        var key = readMessage();
-//                        keys.put(Session.idGenerator,key);
                         writeSystemMessage("you inited session : " + Session.idGenerator);
                         hostPublicKey = readPublicKey();
                         bufIn = in;
                         bufOut = out;
-//                        MainViewController.log("user : " + clientSocket.getPort() + " init a session " + Session.idGenerator);
-                        sessions.put(Session.idGenerator, new Session(clientSocket, encryptionMode));
+                        sessions.put(Session.idGenerator, new Session(clientSocket, encryptionMode,keyLength));
 
                     } else {
                         // join to server
@@ -70,6 +65,7 @@ public class Server {
                         } else {
                             MainViewController.log("user " + clientSocket.getPort() + " : " + "joined to session " + sessionId);
                             writeSystemMessage(session.encryptionMethod);
+                            writeSystemMessage(String.valueOf(session.keyLength));
                             if (session.encryptionMethod.equals("MARS(CBC)")) {
                                 var iv = ivs.get(castedId);
                                 var b64 = Base64.getEncoder().encodeToString(iv);
